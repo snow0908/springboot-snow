@@ -48,6 +48,12 @@
             <version>${gson.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
