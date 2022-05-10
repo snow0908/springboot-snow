@@ -11,6 +11,7 @@
         <module name="springboot-common" />
         <module name="springboot-eureka" />
         <module name="springboot-security" />
+        <module name="springboot-es" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="springboot-common" options="-parameters" />
       <module name="springboot-easyexcel" options="-parameters" />
+      <module name="springboot-es" options="-parameters" />
       <module name="springboot-eureka" options="-parameters" />
       <module name="springboot-security" options="-parameters" />
       <module name="springboot-springSecuity" options="-parameters" />

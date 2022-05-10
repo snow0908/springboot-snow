@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/springboot-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-easyexcel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-es/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-security/src/main/java" charset="UTF-8" />
