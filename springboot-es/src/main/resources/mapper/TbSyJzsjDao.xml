@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.snow.es.dao.TbSyJzsjDao">
+
+    <resultMap type="com.snow.es.entity.TbSyJzsj" id="TbSyJzsjMap">
+        <result property="cbm" column="CBM" />
+        <result property="cjzh" column="CJZH" />
+        <result property="chzbs" column="CHZBS" />
+        <result property="chzjzlxbm" column="CHZJZLXBM" />
+        <result property="chzjzlxmc" column="CHZJZLXMC" />
+        <result property="djzkssj" column="DJZKSSJ" />
+        <result property="djzjssj" column="DJZJSSJ" />
+        <result property="cyljgdm" column="CYLJGDM" />
+        <result property="cyljgmc" column="CYLJGMC" />
+        <result property="cjzksdm" column="CJZKSDM" />
+        <result property="cjzksmc" column="CJZKSMC" />
+        <result property="czzysdm" column="CZZYSDM" />
+        <result property="czzysmc" column="CZZYSMC" />
+        <result property="czdbm" column="CZDBM" />
+        <result property="czdmc" column="CZDMC" />
+        <result property="cfq" column="CFQ" />
+        <result property="chzxm" column="CHZXM" />
+        <result property="cxbbm" column="CXBBM" />
+        <result property="cxbmc" column="CXBMC" />
+        <result property="csfzjhm" column="CSFZJHM" />
+        <result property="igdbs" column="IGDBS" />
+        <result property="izkbs" column="IZKBS"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="cbm" useGeneratedKeys="true">
+        insert into dbo.TB_SY_JZSJ(CJZH, CHZBS, CHZJZLXBM, CHZJZLXMC, DJZKSSJ, DJZJSSJ, CYLJGDM, CYLJGMC, CJZKSDM, CJZKSMC, CZZYSDM, CZZYSMC, CZDBM, CZDMC, CFQ, CHZXM, CXBBM, CXBMC, CSFZJHM, IGDBS, IZKBS)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.cjzh}, #{entity.chzbs}, #{entity.chzjzlxbm}, #{entity.chzjzlxmc}, #{entity.djzkssj}, #{entity.djzjssj}, #{entity.cyljgdm}, #{entity.cyljgmc}, #{entity.cjzksdm}, #{entity.cjzksmc}, #{entity.czzysdm}, #{entity.czzysmc}, #{entity.czdbm}, #{entity.czdmc}, #{entity.cfq}, #{entity.chzxm}, #{entity.cxbbm}, #{entity.cxbmc}, #{entity.csfzjhm}, #{entity.igdbs}, #{entity.izkbs})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="cbm" useGeneratedKeys="true">
+        insert into dbo.TB_SY_JZSJ(CJZH, CHZBS, CHZJZLXBM, CHZJZLXMC, DJZKSSJ, DJZJSSJ, CYLJGDM, CYLJGMC, CJZKSDM, CJZKSMC, CZZYSDM, CZZYSMC, CZDBM, CZDMC, CFQ, CHZXM, CXBBM, CXBMC, CSFZJHM, IGDBS, IZKBS)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.cjzh}, #{entity.chzbs}, #{entity.chzjzlxbm}, #{entity.chzjzlxmc}, #{entity.djzkssj}, #{entity.djzjssj}, #{entity.cyljgdm}, #{entity.cyljgmc}, #{entity.cjzksdm}, #{entity.cjzksmc}, #{entity.czzysdm}, #{entity.czzysmc}, #{entity.czdbm}, #{entity.czdmc}, #{entity.cfq}, #{entity.chzxm}, #{entity.cxbbm}, #{entity.cxbmc}, #{entity.csfzjhm}, #{entity.igdbs}, #{entity.izkbs})
+        </foreach>
+        on duplicate key update
+         CJZH = values(CJZH) , CHZBS = values(CHZBS) , CHZJZLXBM = values(CHZJZLXBM) , CHZJZLXMC = values(CHZJZLXMC) , DJZKSSJ = values(DJZKSSJ) , DJZJSSJ = values(DJZJSSJ) , CYLJGDM = values(CYLJGDM) , CYLJGMC = values(CYLJGMC) , CJZKSDM = values(CJZKSDM) , CJZKSMC = values(CJZKSMC) , CZZYSDM = values(CZZYSDM) , CZZYSMC = values(CZZYSMC) , CZDBM = values(CZDBM) , CZDMC = values(CZDMC) , CFQ = values(CFQ) , CHZXM = values(CHZXM) , CXBBM = values(CXBBM) , CXBMC = values(CXBMC) , CSFZJHM = values(CSFZJHM) , IGDBS = values(IGDBS) , IZKBS = values(IZKBS)     </insert>
+
+</mapper>
+

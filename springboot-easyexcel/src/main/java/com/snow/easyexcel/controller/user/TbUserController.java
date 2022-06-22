@@ -44,8 +44,9 @@ public class TbUserController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public PublicResult<TbUser> queryById(@PathVariable("id") Integer id) {
-		return PublicResult.buildQuerySucess(service.queryById(id));
+    public PublicResult<TbUser> queryById(@PathVariable("id") String id) {
+
+		return PublicResult.buildQuerySucess(service.getById(id));
     }
 
     /**

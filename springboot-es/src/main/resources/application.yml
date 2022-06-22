@@ -1,26 +1,46 @@
 server:
   port: 8889
+  servlet:
+    context-path: /snow-es
+
 
 spring:
   application:
-    name: es
+    name: snow-es
+  jakson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&nullCatalogMeansCurrent=true&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: sa
+    password: 123qwe,.
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:sqlserver://192.168.200.85:50138;DatabaseName=YHYL_DTB_HDC
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    initial-size: 5
+    min-idle: 5
+    max-active: 40
+    max-wait: 30000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 30000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    pool-prepared-statements: true
+    max-open-prepared-statements: 20
+    max-pool-prepared-statement-per-connection-size: 20
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:3000/eureka/
 mybatis-plus:
-  mapper-locations: classpath:mapping/**/*Mapping.xml
-  type-aliases-package: com.snow.easyexcel.entity
+  mapper-locations: classpath:mapping/*Dao.xml
+  type-aliases-package: com.snow.es.entity
 
 #showSql
 logging:
   level:
     com:
       snow:
-        learn:
-          mapper: debug
+        es:
+          dao: debug

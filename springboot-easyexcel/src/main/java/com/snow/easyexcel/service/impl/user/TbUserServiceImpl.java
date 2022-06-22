@@ -23,16 +23,6 @@ public class TbUserServiceImpl extends ServiceImpl<TbUserMapper,TbUser> implemen
     @Resource
     private TbUserMapper mapper;
 
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param id 主键
-     * @return 实例对象
-     */
-    @Override
-    public TbUser queryById(Integer id) {
-		return mapper.selectById(id);
-    }
 
     /**
      * 分页查询

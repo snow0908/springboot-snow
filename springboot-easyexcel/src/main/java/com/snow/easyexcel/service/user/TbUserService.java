@@ -16,14 +16,6 @@ import java.util.List;
 public interface TbUserService extends IService<TbUser> {
 
     /**
-     * 通过ID查询单条数据
-     *
-     * @param id 主键
-     * @return 实例对象
-     */
-    TbUser queryById(Integer id);
-
-    /**
      * 分页查询
      *
      * @param tbUser 筛选条件

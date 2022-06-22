@@ -209,7 +209,7 @@ class SpringbootEsApiApplicationTests {
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
 
         // 查询条件，我们可以使用
-        TermQueryBuilder termQuery = QueryBuilders.termQuery("name", "BNTang1");
+        TermQueryBuilder termQuery = QueryBuilders.termQuery("name.keyword", "BNTang1");
         sourceBuilder.query(termQuery);
         sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
 
